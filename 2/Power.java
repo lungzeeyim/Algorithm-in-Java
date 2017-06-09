@@ -1,3 +1,4 @@
+// the class name "Power" 应该是和这个的文件名相同！否则不能编译！class Power == Power.java
 public class Power {
     public long power(int a, int b) {
         if (b == 0) {
@@ -9,8 +10,12 @@ public class Power {
         long half = power(a, b / 2);
         return b % 2 == 0? half * half : half * half * half * a;
     }
+    public static void main(String[] args) {
+        // power(2, 3) = 8
+        long a1 = new Power().power(2, 3);
+        System.out.println(a1);
+    }
 }
-
 
 
 /**
@@ -24,8 +29,11 @@ public class Power {
                    |
                  (2, 0) 1
 
-
  **/
+
+// javac Power.java
+// java Power
+// output: 16
 
 
 
