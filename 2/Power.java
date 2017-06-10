@@ -8,12 +8,17 @@ public class Power {
             return 0;
         }
         long half = power(a, b / 2);
-        return b % 2 == 0? half * half : half * half * half * a;
+        return b % 2 == 0? half * half : half * half * a;
     }
     public static void main(String[] args) {
         // power(2, 3) = 8
         long a1 = new Power().power(2, 3);
         System.out.println(a1);
+
+        // power(-2, 5) = -32
+        Power pw = new Power();
+        long a2 = pw.power(-2,5);
+        System.out.println(a2);
     }
 }
 
