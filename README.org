@@ -6,3 +6,7 @@
 *** FirstOccur.java (First Occurrence)
 - Given a target integer T and an integer array A sorted in ascending order, find the index of the first occurrence of T in A or return -1 if there is no such index.
 - A = {1, 2, 3}, T = 2, return 1
+*** Search In Unknown Sized Sorted Array
+- Given a integer dictionary A of unknown size, where the numbers in the dictionary are sorted in ascending order, determine if a given target integer T is in the dictionary. Return the index of T in A, return -1 if T is not in A.
+- A = {1, 2, 5, 9, ......}, T = 5, return 2
+- A = {1, 2, 5, 9, 12, ......}, T = 7, return -1
