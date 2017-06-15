@@ -11,3 +11,9 @@
 - Given a integer dictionary A of unknown size, where the numbers in the dictionary are sorted in ascending order, determine if a given target integer T is in the dictionary. Return the index of T in A, return -1 if T is not in A.
 - A = {1, 2, 5, 9, ......}, T = 5, return 2
 - A = {1, 2, 5, 9, 12, ......}, T = 7, return -1
+*** Search In Sorted Matrix I
+- Given a 2D matrix that contains integers only, which each row is sorted in an ascending order. The first element of next row is larger than (or equal to) the last element of previous row.
+- Given a target number, returning the position that the target locates within the matrix. If the target number does not exist in the matrix, return {-1, -1}.
+- matrix = { {1, 2, 3}, {4, 5, 7}, {8, 9, 10} }
+- target = 7, return {1, 2}
+- target = 6, return {-1, -1} to represent the target number does not exist in the matrix.
