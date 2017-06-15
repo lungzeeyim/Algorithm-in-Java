@@ -7,10 +7,10 @@ public class FibonacciNumber {
             return a;
         }
         while (K > 1) {
-            long temp = a + b;
-            a = b;
-            b = temp;
-            K--;
+            long temp = a + b;    // sum of a and b first
+            a = b;                // a becomes b
+            b = temp;             // b becomes the sum
+            K--;                  // K-- until K == 1, that time, b is what you need.
         }
         return b;
     }
