@@ -1,5 +1,21 @@
 * Algorithm in Java
 ** 一 One
+*** SelectionSort.java (Selection Sort)
+- Given an array of integers, sort the elements in the array in ascending order. The selection sort algorithm should be used to solve this problem.
+  - {1} is sorted to {1}
+  - {1, 2, 3} is sorted to {1, 2, 3}
+  - {3, 2, 1} is sorted to {1, 2, 3}
+  - {4, 2, -3, 6, 1} is sorted to {-3, 1, 2, 4, 6}
+*** MergeSort.java (Merge Sort)
+- Given an array of integers, sort the elements in the array in ascending order. The merge sort algorithm should be used to solve this problem.
+  - {1} is sorted to {1}
+  - {1, 2, 3} is sorted to {1, 2, 3}
+  - {3, 2, 1} is sorted to {1, 2, 3}
+  - {4, 2, -3, 6, 1} is sorted to {-3, 1, 2, 4, 6}
+*** QuickSort.java (Quick Sort)
+*** RainbowSort.java (Rainbow Sort)
+*** Move0s.java (Move 0s To The End I)
+
 ** 二 Two
 *** FibonacciNumber.java (Fibonacci Number)
 - Get the Kth number in the Fibonacci Sequence. (K is 0-indexed, the 0th Fibonacci number is 0 and the 1st Fibonacci number is 1). 
