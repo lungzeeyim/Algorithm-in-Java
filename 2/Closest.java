@@ -1,5 +1,5 @@
-public class Closet {
-    public int closet(int[] array, int target) {
+public class Closest {
+    public int closest(int[] array, int target) {
         if (array == null || array.length == 0) {
             return -1;
         }
@@ -24,9 +24,9 @@ public class Closet {
     }
 
     public static void main (String[] args) {
-        Closet clo = new Closet();
+        Closest clo = new Closest();
         int[] arr1 = {1,4,6};
-        int an = clo.closet(arr1, 5);
+        int an = clo.closest(arr1, 5);
         System.out.println(an);
     }
 }
