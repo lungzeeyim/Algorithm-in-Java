@@ -11,28 +11,28 @@ public class UnknowSizeBinarySearch {
         if (dict == null) {
             return -1;
         }
-        int left = 0;  // initialize the left pointer to the most left
-        int right = 1; // initialize the right pointer to right side to left pointer
-        while (dict.get(right) != null &&    // right pointer's num must exist ---> not out of boundary
-               dict.get(right).hashCode() < target)     // right pointer's num must smaller than Target
+        int left = 0;                                                       // initialize the left pointer to the most left
+        int right = 1;                                                      // initialize the right pointer to right side to left pointer
+        while (dict.get(right) != null &&                                   // right pointer's num must exist ---> not out of boundary
+               dict.get(right).hashCode() < target)                         // right pointer's num must smaller than Target
             {
-                left = right;                // move left pointer to right pointer
-                right = 2 * right;           // double right index
+                left = right;                                               // move left pointer to right pointer
+                right = 2 * right;                                          // double right index
             }
         return binarySearch(dict, target, left, right);
     }
 
     private int binarySearch(HashMap dict, int target, int left, int right) {
-        while (left <= right) {  // cotinue looping when left pointer is not to the right of right pointer.
-            int mid = left + (right - left) / 2;  // typicall mid pointer solution
-            if (dict.get(mid) == null ||           // mid pointer's num exist
-                dict.get(mid).hashCode() > target)      // mid pointer's num is greater than target
-                {                            // then right pointer jump to the left side of mid point
+        while (left <= right) {                                             // cotinue looping when left pointer is not to the right of right pointer.
+            int mid = left + (right - left) / 2;                            // typicall mid pointer solution
+            if (dict.get(mid) == null ||                                    // mid pointer's num exist
+                dict.get(mid).hashCode() > target)                          // mid pointer's num is greater than target
+                {                                                           // then right pointer jump to the left side of mid point
                     right = mid - 1; 
                 }
-            else if (dict.get(mid).hashCode() < target) // mid point's num less than
+            else if (dict.get(mid).hashCode() < target)                     // mid point's num less than
                 {
-                    left = mid + 1;           // ---> left pointer jump to the right side of mid point
+                    left = mid + 1;                                         // ---> left pointer jump to the right side of mid point
                 }
             else
                 {
