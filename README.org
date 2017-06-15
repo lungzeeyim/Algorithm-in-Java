@@ -8,8 +8,7 @@
 1st fibonacci number is 1
 2nd fibonacci number is 1
 3rd fibonacci number is 2
-6th fibonacci number is 8
-#+END_SRC
+6th fibonacci number is 8 #+END_SRC
 *** Power.java (a to the power of b)
 - Evaluate a to the power of b, assuming both a and b are integers and b is non-negative. 
 - power(2, 0) = 1
