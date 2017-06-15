@@ -1,0 +1,32 @@
+import java.util.HashMap; // hashmap can be dictionary
+import java.util.Dictionary;
+
+public class UnknowSizeBinarySearch {
+    public int search(HashMap dict, int target) {
+        if (dict == null) {
+            return -1;
+        }
+        int left = 0;  // initialize the left pointer to the most left
+        int right = 1; // initialize the right pointer to right side to left pointer
+        while (dict.get(right) != null &&    // right pointer's num must exist ---> not out of boundary
+               dict.get(right) < target)     // right pointer's num must smaller than Target
+            {
+                left = right;                // move left pointer to right pointer
+                right = 2 * right;           // double right index
+            }
+        retrun binarySearch(dict, target, left, right);
+    }
+
+    private int binarySearch(dict, target, left, right) {
+        while (left <= right) {  // cotinue looping when left pointer is not to the right of right pointer.
+            int mid = left + （right - left) / 2; // typicall mid pointer solution
+            
+        }
+    }
+
+    public static void main(String[] args) {
+        HashMap<Integer, Integer> dict = new HashMap<Integer, Integer>();
+        dict.put(0,1);
+        int foo = dict.get(0);
+    }
+}
