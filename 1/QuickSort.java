@@ -1,49 +1,49 @@
 import java.util.Arrays;
 
 public class QuickSort {
-    public int[] quickSort(int[] array) {
-        if (array == null) {
-            return array;
-        }
-        quickSort(array, 0, array.length - 1);
-        return array;
+    public int[] quickSort(int[] array) {                        // quick sort first check
+        if (array == null) {                                     // check if its null
+            return array;                                        // null -> return original array
+        }                                                        //
+        quickSort(array, 0, array.length - 1);                   // calll real quick sort process, left pointer = 0, right pointer must be (length -1) 
+        return array;                                            // after quicksort, return the sorted array
     }
 
-    public void quickSort(int[] array, int left, int right) {
-        if (left >= right) {   // its over, if left pointer pass right pointer
-            return;
+    public void quickSort(int[] array, int left, int right) {    // real quick sort with (array, left p, right p) parameter
+        if (left >= right) {                                     // its over, if left pointer pass right pointer
+            return;                                              // back...
         }
         
         // define a pivot 
-        int pivotPos = partition(array, left, right);  // use the  pivot to partition the array
-        quickSort(array, left, pivotPos - 1);
-        quickSort(array, pivotPos + 1, right);
+        int pivotPos = partition(array, left, right);            // partition the array with Lp and Rp, and get the pivotPos
+        quickSort(array, left, pivotPos - 1);                    // quick sort left part
+        quickSort(array, pivotPos + 1, right);                   // quick sort right part
     }
 
-    private int partition(int[] array, int left, int right) {
-        int pivotIndex = pivotIndex(left, right);
+    private int partition(int[] array, int left, int right) {    // partition the array beased on Left pointer and Right pointer
+        int pivotIndex = pivotIndex(left, right);                //
         int pivot = array[pivotIndex];
 
         swap(array, pivotIndex, right);
         int leftBound = left;
         int rightBound = right - 1;
-        while (leftbound <= rightBound) {
-            if (array[leftBOund] < pivot) {
+        while (leftBound <= rightBound) {
+            if (array[leftBound] < pivot) {
                 leftBound++;
             } else if (array[rightBound] >= pivot) {
                 rightBound--;
             } else {
-                sway(array, leftBound++, rightBound--);
+                swap(array, leftBound++, rightBound--);
             }
         }
-        sway(array, leftBound, right);
+        swap(array, leftBound, right);
         return leftBound;
     }    
     private int pivotIndex(int left, int right) {
-        return left + (int) (Math.ramdom() * (right - left + 1));
+        return left + (int) (Math.random() * (right - left + 1));
     }
         
-    private void sawp(int[] array, int left, int right) {
+    private void swap(int[] array, int left, int right) {
         int temp = array[left];
         array[left] = array[right];
         array[right] = temp;
