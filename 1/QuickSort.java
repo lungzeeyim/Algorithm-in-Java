@@ -10,7 +10,7 @@ public class QuickSort {
     }
 
     public void quickSort(int[] array, int left, int right) {    // real quick sort with (array, left p, right p) parameter
-        if (left >= right) {                                     // its over, if left pointer pass right pointer
+        if (left >= right) {                                     // its over, if left pointer pass right pointer, (check 1 element array)
             return;                                              // back...
         }
         
