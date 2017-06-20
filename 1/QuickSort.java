@@ -27,17 +27,17 @@ public class QuickSort {
         swap(array, pivotIndex, right);                          // swap the poisiton of pivotIndex and right
         int leftBound = left;                                    // leftBound same as left
         int rightBound = right - 1;                              // rightBound is before the right index, since right is alreay swaped
-        while (leftBound <= rightBound) {                        // 
-            if (array[leftBound] < pivot) {
-                leftBound++;
-            } else if (array[rightBound] >= pivot) {
-                rightBound--;
-            } else {
+        while (leftBound <= rightBound) {                        // if left pointer still smaller than the right pointer
+            if (array[leftBound] < pivot) {                      // if left pointer's number smaller than pivot, then
+                leftBound++;                                     // lef pointer move 1 position
+            } else if (array[rightBound] >= pivot) {             // if right pointer's number larger than pivot, then
+                rightBound--;                                    // right pointer move one position to the left
+            } else {                                             // anyother situation, just swap left and right pointer
                 swap(array, leftBound++, rightBound--);
             }
         }
-        swap(array, leftBound, right);
-        return leftBound;
+        swap(array, leftBound, right);                           // swap the left bound with the most right number
+        return leftBound;                                        // return leftBound pointer
     }    
     private int pivotIndex(int left, int right) {                // 
         return left + (int) (Math.random() * (right - left + 1));// 1. Math.random() is 0~1 by default
