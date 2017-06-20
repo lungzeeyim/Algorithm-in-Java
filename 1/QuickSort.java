@@ -21,13 +21,13 @@ public class QuickSort {
     }
 
     private int partition(int[] array, int left, int right) {    // partition the array beased on Left pointer and Right pointer
-        int pivotIndex = pivotIndex(left, right);                // 
-        int pivot = array[pivotIndex];
+        int pivotIndex = pivotIndex(left, right);                // get pivot Index
+        int pivot = array[pivotIndex];                           // get the number that pivot points at
 
-        swap(array, pivotIndex, right);
-        int leftBound = left;
-        int rightBound = right - 1;
-        while (leftBound <= rightBound) {
+        swap(array, pivotIndex, right);                          // swap the poisiton of pivotIndex and right
+        int leftBound = left;                                    // leftBound same as left
+        int rightBound = right - 1;                              // rightBound is before the right index, since right is alreay swaped
+        while (leftBound <= rightBound) {                        // 
             if (array[leftBound] < pivot) {
                 leftBound++;
             } else if (array[rightBound] >= pivot) {
@@ -43,10 +43,11 @@ public class QuickSort {
         return left + (int) (Math.random() * (right - left + 1));// 1. Math.random() is 0~1 by default
                                                                  // 2. ( right - left ) can get all element's index
                                                                  // 3. right - left + 1 is because (int)Math.random(), then will be the same range as above
+                                                                 // return all a element index between left and right
     }
         
-    private void swap(int[] array, int left, int right) {
-        int temp = array[left];
+    private void swap(int[] array, int left, int right) {        // swap indexLeft and indexRight
+        int temp = array[left];                                  
         array[left] = array[right];
         array[right] = temp;
     }
