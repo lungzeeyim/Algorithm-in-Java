@@ -1,0 +1,14 @@
+* Quick Sort
+#+BEGIN_SRC 
+                                [4,3,1]
+                                   |
+                                quickSort(array,0,2)
+                                  |
+                           array[4,3,1] ; left = 0 ; right = 2 ; pivotPos = 1; ...........
+                                    |                                                         
+                          array[1,3,4] left = 0, right = 2, pivotIndex = 0 + 1 = 1; pivot=3; leftB = 1; rightB=0           
+                                R L  
+
+Worst case O(n^2)
+Average case O(nlogn)
+#+END_SRC
