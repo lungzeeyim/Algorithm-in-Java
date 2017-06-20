@@ -21,7 +21,7 @@ public class QuickSort {
     }
 
     private int partition(int[] array, int left, int right) {    // partition the array beased on Left pointer and Right pointer
-        int pivotIndex = pivotIndex(left, right);                //
+        int pivotIndex = pivotIndex(left, right);                // 
         int pivot = array[pivotIndex];
 
         swap(array, pivotIndex, right);
@@ -39,8 +39,10 @@ public class QuickSort {
         swap(array, leftBound, right);
         return leftBound;
     }    
-    private int pivotIndex(int left, int right) {
-        return left + (int) (Math.random() * (right - left + 1));
+    private int pivotIndex(int left, int right) {                // 
+        return left + (int) (Math.random() * (right - left + 1));// 1. Math.random() is 0~1 by default
+                                                                 // 2. ( right - left ) can get all element's index
+                                                                 // 3. right - left + 1 is because (int)Math.random(), then will be the same range as above
     }
         
     private void swap(int[] array, int left, int right) {
