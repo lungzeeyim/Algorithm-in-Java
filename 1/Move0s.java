@@ -7,7 +7,7 @@ public class Move0s {
         }
         int left = 0;                                  // left pointer at the beginning
         int right = array.length - 1;                  // right pointer at the end
-        
+        // 其实就是挡板思想这里！！！
         while (left <= right) {                        // do it until they are pointing the same thing
             if (array[left] != 0) {                    // move the pointer to its right side if no zero found
                 left++;
