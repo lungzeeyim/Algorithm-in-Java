@@ -12,9 +12,13 @@ public class CheckBalanced {
         if (leftHeight == -1) {return -1;}
         int rightHeight = height(root.right);
         if (rightHeight == -1) {return -1;}
+
+        System.out.println(leftHeight + " - " + rightHeight);
+        
         if (Math.abs(leftHeight - rightHeight) > 1) {
             return -1;
         }
+        
         return Math.max(leftHeight, rightHeight) + 1;
     }
     
@@ -48,13 +52,15 @@ public class CheckBalanced {
 
       /    \
 
-    3        8
+    3        8     
 
-  /   \        \
+  /   \        \  2
 
-1      4        11
+1      4        11   
 
+                 \  1
 
+                  14
 
 
 */
