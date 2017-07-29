@@ -1,5 +1,6 @@
 // Get the list of keys in a given binary search tree in a given range[min, max] in ascending order, both min and max are inclusive.
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
 
 public class GetRange {    
     public List<Integer> getRange(TreeNode root, int min, int max) {
