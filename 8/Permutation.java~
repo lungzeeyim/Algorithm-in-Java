@@ -1,0 +1,12 @@
+public class Permutation() {
+	public List<String> permutation(String set) {
+		
+    }
+
+    public static void main(String[] args) {
+        Permutation per = new Permutation();
+        List<String> result;
+        result = per.permutation("ab");
+        System.out.println(result.toString());
+    }
+}
