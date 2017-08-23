@@ -1,4 +1,14 @@
-/*  K-th Smallest Number In Sorted Matrix */
+/*  K-th Smallest Number In Sorted Matrix 
+
+Assume: 
+matrix is not null
+k > 0
+k <= K*M (rows * columns)
+
+*/
+
+import java.util.*;
+
 public class KthSmallestNum {
     public int kthSmallest(int[][] matrix, int k) {
         int rows = matrix.length;
@@ -21,29 +31,81 @@ public class KthSmallestNum {
         for (int i = 0; i < k - 1; i++) {
             Cell cur = minHeap.poll();
             if (cur.row + 1 < rows && !visited[cur.row + 1][cur.column]) {
-                mminHeap.offer(new Cell(cur.row + 1, cur.column, matrix[cur.row + 1][cur.column]));
-                
+                minHeap.offer(new Cell(cur.row + 1, cur.column, matrix[cur.row + 1][cur.column]));
+                visited[cur.row + 1][cur.column] = true;
             }
-
+            
             if (cur.column + 1 < columns && !visited[cur.row][cur.column + 1]) {
                 minHeap.offer(new Cell(cur.row, cur.column + 1, matrix[cur.row][cur.column + 1]));
-
+                visited[cur.row][cur.column + 1] = true;
             }
-
+            
         }
         return minHeap.peek().value;
         
     }
-
+    
     static class Cell {
         int row;
         int column;
         int value;
-
+        
         Cell (int row, int column, int value) {
             this.row = row;
             this.column = column;
             this.value = value;
         }
     }
+    
+    public static void main(String[] args) {
+
+        /*
+          
+          2 4 
+          3 8
+          
+        */
+        
+        int[][] matrix = new  int[2][2];
+        matrix[0][0] = 2;
+        matrix[0][1] = 4;
+        matrix[1][0] = 3;
+        matrix[1][1] = 8;
+        KthSmallestNum kth = new KthSmallestNum();
+        // 2 3 4 8
+        System.out.println(kth.kthSmallest(matrix, 1));
+        System.out.println(kth.kthSmallest(matrix, 2));
+        System.out.println(kth.kthSmallest(matrix, 3));
+        System.out.println(kth.kthSmallest(matrix, 4));
+        
+        /* output: 
+           2
+           3
+           4
+           8
+        */
+    }
+    
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
