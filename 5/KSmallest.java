@@ -40,14 +40,14 @@ public class KSmallest {
         if (array.length == 0 || k == 0) {
             return new int[0];
         }
-        quickSelect(array, 0, array.length - 1, k - 1);
+        quickSelect(array, 0, array.length - 1, k - 1);               // ( [4,8,5,1], 0, 3, 2 )
         int[] result = Arrays.copyOf(array, k);
         Arrays.sort(result);
         return result;
     }
 
     private void quickSelect(int[] array, int left, int right, int target) {
-        int mid = partition(array, left, right);
+        int mid = partition(array, left, right);                      // mid = 
         if (mid == target) {
             return;
         } else if (target < mid) {
@@ -57,12 +57,12 @@ public class KSmallest {
         }        
     }
 
-    private int partition (int[] array, int left, int right) {
-        int pivot = array[right];
-        int start = left;
-        int end = right - 1;
-        while (start <= end) {
-            if (array[start] < pivot) {
+    private int partition (int[] array, int left, int right) {        // [4,8,5,1], 0, 3
+        int pivot = array[right];                                     // 1
+        int start = left;                                             // 0
+        int end = right - 1;                                          // 2
+        while (start <= end) {                                        // (0, 2)
+            if (array[start] < pivot) {                               //
                 start++;
             } else if (array[end] >= pivot) {
                 end--;
@@ -86,3 +86,17 @@ public class KSmallest {
         System.out.println(Arrays.toString(ks.kSmallestII(data, 3)));
     }
 }
+
+
+
+/*
+a = [4,8,5,1]    k = 3
+
+
+
+
+
+
+
+
+ */
