@@ -1,0 +1,9 @@
+/* 检查一个 undirected graph(双向的图) 是否是bipartite/bai-pa-tai-t/(就是节点可以分成两组，自己组内的节点是不能连到自己组里面的点) */
+
+import java.util.*;
+
+public class IsBipartite {
+    public boolean is Bipartite(List<Graph> graph) {
+        return false;
+    }
+}
