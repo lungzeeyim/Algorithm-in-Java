@@ -40,17 +40,28 @@ public class KSmallest {
         if (array.length == 0 || k == 0) {
             return new int[0];
         }
+<<<<<<< HEAD
         quickSelect(array, 0, array.length - 1, k - 1);             // [3,8,5,1], 0, 3, 2
         System.out.println(Arrays.toString(array));
         int[] result = Arrays.copyOf(array, k);  // K是新数组的大小
         Arrays.sort(result);  // 整理排序result数组
+=======
+        quickSelect(array, 0, array.length - 1, k - 1);               // ( [4,8,5,1], 0, 3, 2 )
+        int[] result = Arrays.copyOf(array, k);
+        Arrays.sort(result);
+>>>>>>> a17906ec3dca86ec4ea6984e951116718359a2cd
         return result;
     }
 
     private void quickSelect(int[] array, int left, int right, int target) {
+<<<<<<< HEAD
         // System.out.println(target); // 2
         int mid = partition(array, left, right);                    // partition([3,8,5,1], 0, 3)
         if (mid == target) {                                        // 
+=======
+        int mid = partition(array, left, right);                      // mid = 
+        if (mid == target) {
+>>>>>>> a17906ec3dca86ec4ea6984e951116718359a2cd
             return;
         } else if (target < mid) {
             quickSelect(array, left, mid - 1, target);
@@ -59,6 +70,7 @@ public class KSmallest {
         }        
     }
 
+<<<<<<< HEAD
     private int partition (int[] array, int left, int right) {       
         int pivot = array[right]; //  1
         int start = left; // 0
@@ -68,6 +80,17 @@ public class KSmallest {
                 start++; // -
             } else if (array[end] >= pivot) { // [5,1]
                 end--; // end = 1
+=======
+    private int partition (int[] array, int left, int right) {        // [4,8,5,1], 0, 3
+        int pivot = array[right];                                     // 1
+        int start = left;                                             // 0
+        int end = right - 1;                                          // 2
+        while (start <= end) {                                        // (0, 2)
+            if (array[start] < pivot) {                               //
+                start++;
+            } else if (array[end] >= pivot) {
+                end--;
+>>>>>>> a17906ec3dca86ec4ea6984e951116718359a2cd
             } else {
                 swap(array, start++, end--);
             }
@@ -90,8 +113,18 @@ public class KSmallest {
 }
 
 
+<<<<<<< HEAD
 /*
 a = [3,8,5,1]  k = 3
+=======
+
+/*
+a = [4,8,5,1]    k = 3
+
+
+
+
+>>>>>>> a17906ec3dca86ec4ea6984e951116718359a2cd
 
 
 
