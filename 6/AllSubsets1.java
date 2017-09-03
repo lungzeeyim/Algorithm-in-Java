@@ -2,6 +2,23 @@
    Set = "abc" ["","a","ab","abc","ac","b","bc","c"] 
 */
 
+
+
+
+/*
+ 
+                                    helper([a,b], [], 0, []) -----------> ['',b',a,ab]
+                                    / ['',b]              \['',b',a,ab]
+                 helper([a,b],[],1,[])                     helper([a,b],[a],1,['',b])
+                 /['']           \['',b] del[b]                  /['',b,a]          \['',b',a,ab]
+helper([a,b],[],2,[])   helper([a,b],[b],2,[''])   helper([a,b],[a],2,['',b])        helper([a,b],[ab],2,['',b',a])
+                  |                          |                          |                                 |
+                 ['']                    ['',b]                     ['',b,a]                             ['',b',a,ab]
+
+
+
+
+ */
 import java.util.*;
 
 public class AllSubsets1 {
@@ -21,6 +38,7 @@ public class AllSubsets1 {
     private void helper(char[] set, StringBuilder sb, int index, List<String> result) {
         // 结束状态：当我们处理了所有字符的选择，之后我们后一个完整的子集
         if (index == set.length) {
+            System.out.println(sb);
             result.add(sb.toString());  // 将字符构造器转换成字符串
             return;
         }
@@ -35,6 +53,7 @@ public class AllSubsets1 {
 
     public static void main(String[] args) {
         String st = "abc";
+        st = "ab";
         AllSubsets1 all = new AllSubsets1();
         
         System.out.println(all.subSets(st));
