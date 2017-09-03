@@ -37,7 +37,7 @@ public class AllSubsets1 {
 
     private void helper(char[] set, StringBuilder sb, int index, List<String> result) {
         // 结束状态：当我们处理了所有字符的选择，之后我们后一个完整的子集
-        if (index == set.length) {
+        if (index == set.length) {          // wtf! char[]的长度没有length没有括号
             System.out.println(sb);
             result.add(sb.toString());  // 将字符构造器转换成字符串
             return;
@@ -48,8 +48,8 @@ public class AllSubsets1 {
         helper(set, sb.append(set[index]), index + 1, result);
 
         // 当检查前面那层的时候，移除被添加的字符串
-        sb.deleteCharAt(sb.length() - 1);
-    }
+        sb.deleteCharAt(sb.length() - 1);   // wtf! StringBuilder/String类的长度没有length()有括号!!!
+    }                                       // 所有大写的非java原生类有括号length()
 
     public static void main(String[] args) {
         String st = "abc";
