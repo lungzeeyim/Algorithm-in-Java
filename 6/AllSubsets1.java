@@ -24,7 +24,7 @@ import java.util.*;
 public class AllSubsets1 {
     public List<String> subSets(String set) {
         List<String> result = new ArrayList<String>();
-        if (set == null) {
+        if (set == null) {    // 预防崩溃，set是指向一个null
             return result;
         }
 
@@ -54,6 +54,7 @@ public class AllSubsets1 {
     public static void main(String[] args) {
         String st = "abc";
         st = "ab";
+        //String st = null;
         AllSubsets1 all = new AllSubsets1();
         
         System.out.println(all.subSets(st));

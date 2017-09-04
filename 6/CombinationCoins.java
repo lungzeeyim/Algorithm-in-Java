@@ -10,6 +10,34 @@ coins = {2, 1}, target = 4, the return should be
 ]
  */
 
+ /*
+
+target = 3
+coins [2,1]
+
+                                   helper(3, [2,1], 0, [], [[]])
+                                   /                        <----[[0,3][1,1]]
+                 max = 3/2 = 1
+                 for 2次
+                    1次         ------------------------------------>> |              2次
+                    cur[0]                                             | i = 1
+                    ...[[0,3]]                                         | cur[1]
+                    cur[]                                              | helper(3-1*2 = 1, [2,1], 1, [1], [[0,3]])  
+                                                                                            cur[] <--- [[0,3][1,1]]
+                                                                       |           |
+                        |                                                          |
+                 helper(3,[2,1], 1, [0], [[]])                                     |
+                        index == coins.length - 1 == 1 T                           | 1 == 1 T
+                        3%1 == 0 T                                                 | 1 % 1 = 0
+                        3/1 = 3, cur[0,3]                                          | cur.add(1/1) => cur[1,1]
+                        [[0,3]]                                                    | result[[0,3][1,1]]
+                        [0]                                                        | cur[1,]
+
+
+result = [[0,3][1,1]]
+
+*/
+
 import java.util.*;
 
 public class CombinationCoins {
@@ -31,8 +59,8 @@ public class CombinationCoins {
         // 更好的方法是在前面的层里面减少冇必要的DFS分支数
         // coins.length - 1 是最后一个我地使用的银币，并且我所做是为了得到target/coins[coins.length - 1]
         if (index == coins.length - 1) {
-            if (target % coins[coins.length - 1] == 0) {
-                cur.add(target / coins[coins.length - 1]);
+            if (target % coins[coins.length - 1] == 0) {    // 能不能整除？
+                cur.add(target / coins[coins.length - 1]);  // 可以整除，就除吧
                 result.add(new ArrayList<Integer>(cur));
                 cur.remove(cur.size() - 1);
             }
@@ -50,7 +78,8 @@ public class CombinationCoins {
 
     public static void main(String[] args) {
         CombinationCoins cc = new CombinationCoins();
-        int target = 4; // 4 cents
+        int target = 4;
+        //target = 3; // easy for flow graph
         int[] coins = new int[2];
         coins[0] = 2;
         coins[1] = 1;
