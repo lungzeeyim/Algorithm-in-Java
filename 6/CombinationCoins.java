@@ -58,11 +58,11 @@ public class CombinationCoins {
         // 中止： index == coins.length
         // 更好的方法是在前面的层里面减少冇必要的DFS分支数
         // coins.length - 1 是最后一个我地使用的银币，并且我所做是为了得到target/coins[coins.length - 1]
-        if (index == coins.length - 1) {
+        if (index == coins.length - 1) {                    // length - 1
             if (target % coins[coins.length - 1] == 0) {    // 能不能整除？
                 cur.add(target / coins[coins.length - 1]);  // 可以整除，就除吧
-                result.add(new ArrayList<Integer>(cur));
-                cur.remove(cur.size() - 1);
+                result.add(new ArrayList<Integer>(cur));    // 注意result添加一个List<Integer>的方式
+                cur.remove(cur.size() - 1);                 // List的大小用size()
             }
             return;
         }
