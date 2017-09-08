@@ -7,6 +7,37 @@ N = 3, all valid permutations are ["((()))", "(()())", "(())()", "()(())", "()()
 
  */
 
+/*
+k = 2
+cur[,,,]
+
+             xhelper(cur[,,,], 2, 2, 0, [])    
+                       /  r[(()),()()]                      
+            left>0                            
+            cur[(,,,]
+            helper(cur[(,,,], 1, 2, [])
+                / r[(())]               \ r[(()),()()]
+        left = 1 > 0                   right = 2 > 0      
+        cur[(,(,,]                     cur[(,),,]
+        helper(cur[(,(,,], 0, 2, [])   helper(cur[(,),,], 1, 1, r[(())])
+        / r[(())]                                     / r[(()),()()]
+   left = 0 !>                                  left = 1 > 0
+   right > 0                                    cur[(,),(,]
+   cur[(,(,),]                                  helper(cur[(,),(,], 0, 1, r[(())]) 
+   helper(cur[(,(,),], 0, 1, [])                      \ r[(()),()()]
+    \ r[(())]                                      left = 0 
+  left = 0                                         right = 1 > 0
+  right > 0                                        cur[(,),(,)]
+  cur[(,(,),)]                                     helper(cur[(,),(,)], 0, 0, r[(())]) 
+  helper(cur[(,(,),)], 0, 0, [])                            |  r[(()),()()]
+        |                                               r[(()),()()] 
+    r[(())]
+   
+        
+                                                        output: r[(()),()()]
+*/
+
+
 import java.util.*;
 
 public class PermutationsParenthesis1 {
@@ -35,7 +66,7 @@ public class PermutationsParenthesis1 {
             helper(cur, left - 1, right, index + 1, result);
         }
 
-        if (right > left) {
+        if (right > left) {      // 剩下的右括号必须比左边多
             cur[index] = ')';
             helper(cur, left, right - 1, index + 1, result);
         }   
@@ -44,5 +75,6 @@ public class PermutationsParenthesis1 {
     public static void main(String[] args) {
         PermutationsParenthesis1 pe = new PermutationsParenthesis1();
         System.out.println(pe.perenthesis(3));
+        System.out.println(pe.perenthesis(2));
     }
 }

@@ -3,25 +3,6 @@
 permutations
 一组事物可能的序列
 Set = “abc”, all permutations are [“abc”, “acb”, “bac”, “bca”, “cab”, “cba”]
-
-set = "ab"
-result = [ab,ba]
-
-[a,b]
-                     helper([a,b], 0, [])         
-         / r[ab]                                   \   r[ab,ba]
-    for i = 0                                   for i = 1
-    swap(a[a,b], 0, 0) -> not change            swap(a[a,b] , 0, 1) --> a[b,a]
-    helper(a[a,b], 1, r[])                      helper(a[b,a], 1, [ab]) ..........swap(a[b,a], 0, 1) -->a[a,b]
-                       | r[ab]                                           | r[ab,ba]
-                for i = 1                                               for i = 1
-                swap(a[a,b], 1,1) --> no chage                          swap(a[b,a], 1,1) --> no chage
-                helper(a[a,b], 2, r[])  ...swap(a[a,b], 1,1)            helper(a[b,a], 2, r[ab])  ...swap(a[b,a], 1,1) --> not change             
-                        / r[ab]                                                     \ r[ab,ba]
-                    index = 2 = array.length                                    index = array.length = 2
-                    adding-->r[ab]                                              adding->r[ab, ba]
-                    return....                                                  return...
-
  
 */
 
@@ -66,7 +47,6 @@ public class Permutations1 {
     
     public static void main(String[] args) {
         String st = "abc";
-        st = "ab";  // for simple test
         Permutations1 pe = new Permutations1();
         System.out.println(pe.permutations(st));
     }
