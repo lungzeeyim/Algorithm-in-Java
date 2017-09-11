@@ -1,0 +1,2 @@
+/* Given a composition with different kinds of words, return a list of the top K most frequent words in the composition. */
+/* Composition = ["a", "a", "b", "b", "b", "b", "c", "c", "c", "d"], top 2 frequent words are [“b”, “c”] */
